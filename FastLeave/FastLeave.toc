@@ -1,0 +1,19 @@
+## Interface: 110200
+## Title:|cffd6266cFastLeave|r
+## Notes: FastLeave. Leave your group or raid quickly with a movable icon button.
+## Notes-deDE: FastLeave. Verlasse deine Gruppe oder Raid mit einem verschiebbaren Icon-Button.
+## Notes-frFR: FastLeave. Quittez votre groupe ou raid rapidement avec un bouton déplaçable.
+## Notes-esES: FastLeave. Sal de tu grupo o banda rápidamente con un botón movible.
+## Notes-esMX: FastLeave. Sal de tu grupo o banda rápidamente con un botón movible.
+## Notes-ruRU: FastLeave. Быстро выходите из группы или рейда с помощью перемещаемой кнопки.
+## Notes-ptBR: FastLeave. Saia rapidamente do seu grupo ou raide com um botão móvel.
+## Notes-itIT: FastLeave. Esci rapidamente dal tuo gruppo o incursione con un pulsante spostabile.
+## Notes-koKR: FastLeave. 이동 가능한 버튼으로 그룹 또는 공격대를 빠르게 나갑니다.
+## Notes-zhCN: FastLeave. 使用可移动按钮快速离开小队或团队。
+## Notes-zhTW: FastLeave. 使用可移動按鈕快速離開隊伍或團隊。
+## Author: BloodDragon2580
+## Version: 1.0
+## SavedVariablesPerCharacter: FastLeaveSV
+## IconTexture: Interface\AddOns\FastLeave\Media\Texture\logo
+
+FastLeave.lua
