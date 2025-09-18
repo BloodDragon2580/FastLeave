@@ -199,11 +199,23 @@ btn:SetScript("OnEnter", function(self)
 end)
 btn:SetScript("OnLeave", function() GameTooltip:Hide() end)
 
--- Klickfunktion
+-- Klickfunktion (Retail/Classic sicher)
 btn:SetScript("OnClick", function()
-    if InCombatLockdown() then print("FastLeave: "..L.CANT_COMBAT) return end
-    if not IsInGroup() then print("FastLeave: "..L.NOT_IN_GROUP) return end
-    LeaveParty()
+    if InCombatLockdown() then
+        print("FastLeave: "..L.CANT_COMBAT)
+        return
+    end
+    if not IsInGroup() then
+        print("FastLeave: "..L.NOT_IN_GROUP)
+        return
+    end
+    if C_PartyInfo and C_PartyInfo.LeaveParty then
+        C_PartyInfo.LeaveParty()
+    elseif LeaveParty then
+        LeaveParty()
+    else
+        print("FastLeave: LeaveParty() API nicht gefunden!")
+    end
 end)
 
 -- Verschieben überall im Frame mit Shift
@@ -246,8 +258,13 @@ local function UpdateLockVisual()
 end
 UpdateLockVisual()
 
--- Sichtbarkeit
+-- Sichtbarkeit (Combat Lockdown-sicher)
 local function UpdateVisibility()
+    if InCombatLockdown() then
+        frame:RegisterEvent("PLAYER_REGEN_ENABLED")
+        return
+    end
+    frame:UnregisterEvent("PLAYER_REGEN_ENABLED")
     if frame.sv.showWhenSolo or IsInGroup() then
         frame:Show()
     else
@@ -340,6 +357,7 @@ frame:RegisterEvent("PLAYER_LOGIN")
 frame:RegisterEvent("PLAYER_LOGOUT")
 frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("PLAYER_REGEN_ENABLED") -- neu
 
 frame:SetScript("OnEvent", function(self, event)
     if event=="PLAYER_LOGIN" then
@@ -354,6 +372,8 @@ frame:SetScript("OnEvent", function(self, event)
         frame.sv.width, frame.sv.height = frame:GetWidth(), frame:GetHeight()
         local p,_,_,x,y = frame:GetPoint()
         frame.sv.point, frame.sv.x, frame.sv.y = p,x,y
+    elseif event=="PLAYER_REGEN_ENABLED" then
+        UpdateVisibility()
     else
         UpdateVisibility()
     end
