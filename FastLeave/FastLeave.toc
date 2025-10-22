@@ -12,7 +12,7 @@
 ## Notes-zhCN: FastLeave. 使用可移动按钮快速离开小队或团队。
 ## Notes-zhTW: FastLeave. 使用可移動按鈕快速離開隊伍或團隊。
 ## Author: BloodDragon2580
-## Version: 1.6
+## Version: 1.7
 ## SavedVariablesPerCharacter: FastLeaveSV
 ## IconTexture: Interface\AddOns\FastLeave\Media\Texture\logo
 
