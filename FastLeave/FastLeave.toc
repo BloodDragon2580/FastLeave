@@ -1,4 +1,4 @@
-## Interface: 120000
+## Interface: 120001
 ## Title:|cffd6266cFastLeave|r
 ## Notes: FastLeave. Leave your group or raid quickly with a movable icon button.
 ## Notes-deDE: FastLeave. Verlasse deine Gruppe oder Raid mit einem verschiebbaren Icon-Button.
@@ -12,7 +12,7 @@
 ## Notes-zhCN: FastLeave. 使用可移动按钮快速离开小队或团队。
 ## Notes-zhTW: FastLeave. 使用可移動按鈕快速離開隊伍或團隊。
 ## Author: BloodDragon2580
-## Version: 2.4
+## Version: 2.5
 ## SavedVariablesPerCharacter: FastLeaveSV
 ## IconTexture: Interface\AddOns\FastLeave\Media\Texture\logo
 
